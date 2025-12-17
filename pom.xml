@@ -11,6 +11,9 @@
   <properties>
     <maven.compiler.source>25</maven.compiler.source>
     <maven.compiler.target>25</maven.compiler.target>
+
+    <spotless.mvn.version>2.43.0</spotless.mvn.version>
+    <google.java.format>1.17.0</google.java.format>
   </properties>
 
   <dependencies>
@@ -21,4 +24,51 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <build>
+    <plugins>
+
+      <!-- Spotless: Code formatting -->
+      <plugin>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>${spotless.mvn.version}</version>
+        <configuration>
+          <java>
+            <googleJavaFormat>
+              <version>${google.java.format}</version>
+            </googleJavaFormat>
+            <removeUnusedImports/>
+            <importOrder/>
+          </java>
+        </configuration>
+        <executions>
+          <execution>
+            <id>spotless-apply</id>
+            <phase>process-sources</phase>
+            <goals>
+              <goal>apply</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Java Compiler -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.11.0</version>
+        <configuration>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
+        </configuration>
+      </plugin>
+
+      <!-- Testing -->
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.1.2</version>
+      </plugin>
+
+    </plugins>
+  </build>
 </project>
