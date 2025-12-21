@@ -5,6 +5,213 @@ from fundamentals to advanced patterns, with the goal of building strong intuiti
 and interview readiness.
 
 ---
+Core Computer Science Fundamentals to Revise
+
+(For XOR & Bit Manipulation Mastery)
+
+⸻
+
+1. Binary Number System & Representation
+
+(Absolutely non-negotiable)
+
+What to revise
+- Binary positional weights (2⁰, 2¹, …)
+- Conversion: decimal ↔ binary
+- Fixed-width integers (8 / 32 / 64 bit)
+- Overflow & wraparound behavior
+
+Why it matters
+- XOR operates bitwise, not numerically
+- Partitioning, masking, FSM → all rely on binary intuition
+
+If binary feels slow → XOR will feel magical instead of logical.
+
+⸻
+
+2. Two’s Complement Representation
+
+(Critical for negatives & FSM correctness)
+
+What to revise
+- Why -x = ~x + 1
+- Sign bit behavior
+- Why bit operations work uniformly for negatives
+
+Why it matters
+- Explains why:
+- x & -x extracts rightmost set bit
+- FSM works for negative numbers
+- Prevents fear of sign bit edge cases
+
+⸻
+
+3. Boolean Algebra & Bitwise Operators
+
+(The language XOR speaks in)
+
+Operators to master
+- AND (&)
+- OR (|)
+- XOR (^)
+- NOT (~)
+- Shifts (<<, >>)
+
+Laws to revise
+- Idempotence
+- Commutativity
+- Associativity
+- De Morgan’s laws
+
+Why it matters
+- FSM transitions are boolean algebra
+- Masking logic requires confidence, not memorization
+
+⸻
+
+4. Parity, Modulo Arithmetic & Information Loss
+
+(This is the “why XOR fails” foundation)
+
+Concepts
+- XOR = addition modulo 2
+- Parity vs frequency
+- Why modulo loses count information
+
+Why it matters
+- Explains:
+- Why XOR handles “twice” cleanly
+- Why bit counting is needed for “thrice”
+- Why FSM is modulo-k logic
+
+This turns tricks into reasoning.
+
+⸻
+
+5. Bit Masking Techniques
+
+(The workhorse skill)
+
+Must-know patterns
+- Isolate a bit
+- Set / clear / toggle a bit
+- Extract rightmost set bit
+- Test a bit
+
+Why it matters
+- Partition logic
+- Prefix XOR
+- Trie traversal
+- FSM masking
+
+Without masking fluency, solutions feel fragile.
+
+⸻
+
+6. Independence of Bits Principle
+
+(This unlocks 80% of bit problems)
+
+Core idea
+
+Each bit position behaves independently.
+
+Why it matters
+- Enables:
+- Bit counting
+- FSM logic
+- Prefix XOR
+- Modulo-based solutions
+
+This is the conceptual bridge from numbers → bits.
+
+⸻
+
+7. Prefix Techniques (XOR as an Algebraic Operator)
+
+What to revise
+- Prefix sums (additive)
+- Prefix XOR (invertible via XOR)
+
+Why it matters
+- Subarray XOR = K
+- XOR queries
+- XOR matrices
+
+Understanding invertibility avoids brute force.
+
+⸻
+
+8. Finite State Machines (FSM) — Conceptual, not formal
+
+(Do NOT over-study automata theory)
+
+What you actually need
+- State representation
+- State transitions
+- Invariants
+- Modulo cycling
+
+Why it matters
+- FSM-based XOR solutions
+- Compression of counters
+- Recognizing when FSM is overkill
+
+You do not need DFA/NFA theory.
+
+⸻
+
+9. Time–Space Tradeoff Thinking
+
+(Interview maturity signal)
+
+What to internalize
+- XOR vs HashMap
+- Bit counting vs FSM
+- Clarity vs optimization
+
+Why it matters
+- Helps justify solution choice
+- Prevents overengineering
+
+⸻
+
+10. Constraint Reading & Assumption Validation
+
+(Silent interview killer if ignored)
+
+Practice asking:
+- How many unique elements?
+- Exact repetition count?
+- Integer size?
+- Signed or unsigned?
+
+Why it matters
+- XOR solutions are constraint-sensitive
+- Wrong assumptions → wrong solution
+
+⸻
+
+Optional but Very Helpful
+
+11. Information Theory (Light touch)
+    - XOR as information compression
+    - Why data is lost
+
+Useful for:
+- System design
+- RAID parity intuition
+
+⸻
+
+How to use this while practicing
+
+Before each problem, ask yourself:
+- Is this mod-2, mod-k, or difference detection?
+- Do I need partitioning?
+- Am I working per-number or per-bit?
+
+---
 
 ## LEVEL 1 — XOR Basics (Mental Model Building)
 
@@ -164,3 +371,4 @@ Each problem will include:
 - Step-by-step reasoning
 - Edge cases
 - Clean Java implementation
+
